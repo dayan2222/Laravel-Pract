@@ -23,3 +23,8 @@ Route::get('/about', function () {
 
     return view('about',['articles'=> App\Models\Article::take(2)->latest()->get()]);
 });
+
+// Route::get('/articles/{article}','ArticlesController@show');
+Route::get('/articles/{article}','ArticlesController@show');
+
+
