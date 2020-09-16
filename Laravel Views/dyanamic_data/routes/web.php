@@ -26,6 +26,6 @@ Route::get('/about', function () {
 
 // Route::get('/articles/{article}','ArticlesController@show');
 //Route::get('/articles/{article}','ArtController@show');
-Route::get('/articles/{article}','\App\Http\Controllers\ArtController@show');
+Route::get('/articles/{article}','\App\Http\Controllers\ArticleController@show');
 
 
