@@ -8,6 +8,12 @@ Laravel Practise Code
         b) Dynamic Views.
 3) Forms
         
+        # CREATE a CONTROLLER WITH RESOURCE and Model
+        
+        $ php artisan make:controller ProjectController -r -m Project
+        # -r stands for resource
+        
+        
         # Requests GET, POST,PUT, PATCH, DELETE
         # GET for Viewing 
         # POST for SAVE
