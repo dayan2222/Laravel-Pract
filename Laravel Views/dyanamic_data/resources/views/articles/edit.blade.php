@@ -18,6 +18,9 @@
                 <label class="label" for="title">Title</label>
                 <div class="control">
                 <input type="text" class="input" name="title" id="title" value="{{ $article->title}}">
+                @error('title')
+                    <p class="help is-danger">{{$errors->first('title')}}</p>
+                @enderror 
                 </div>
             </div>
 
@@ -25,6 +28,9 @@
                 <label class="label" for="excerpt">Excerpt</label>
                 <div class="control">
                     <textarea type="text" class="input" name="excerpt" id="excerpt">{{ $article->excerpt}}</textarea>
+                    @error('title')
+                    <p class="help is-danger">{{$errors->first('excerpt')}}</p>
+                @enderror 
                 </div>
             </div>
 
@@ -32,6 +38,9 @@
                 <label class="label" for="body">Body</label>
                 <div class="control">
                     <textarea type="text" class="input" name="body" id="body">{{ $article->body}}</textarea>
+                    @error('title')
+                    <p class="help is-danger">{{$errors->first('body')}}</p>
+                @enderror 
                 </div>
             </div>
 

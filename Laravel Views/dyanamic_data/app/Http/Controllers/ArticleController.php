@@ -35,6 +35,12 @@ class ArticleController extends Controller
          # Persist the new resource...
         //  dump(request()->all()); 
 
+        request()->validate([
+            'title'=> 'required',
+            'excerpt'=>'required',
+            'body'=>'required'
+        ]);
+
         $article = new Article();
         $article->title = request('title');
         $article->excerpt = request('excerpt');
@@ -54,9 +60,15 @@ class ArticleController extends Controller
 
     public function update($id)
     {
+        request()->validate([
+            'title'=> 'required',
+            'excerpt'=>'required',
+            'body'=>'required'
+        ]);
+
         # Persist the edited resource...
         $article = Article::find($id);
-        
+
         $article->title = request('title');
         $article->excerpt = request('excerpt');
         $article->body = request('body');
