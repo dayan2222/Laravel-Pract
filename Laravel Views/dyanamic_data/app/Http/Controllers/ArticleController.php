@@ -15,11 +15,11 @@ class ArticleController extends Controller
     }
 
 
-    public function show($id)
+    public function show(Article $article)
     {
 
         # Shows a single resource...
-        $article = Article::find($id);
+        // $article = Article::find($id);
         return view('articles.show',['article'=>$article]);
     }
 
@@ -51,14 +51,14 @@ class ArticleController extends Controller
 
     }
 
-    public function edit($id)
+    public function edit(Article $article)
     {
         # Show a view to edit an existing resource...
-        $article = Article::find($id);
+        // $article = Article::find($id);
         return view('articles.edit',compact('article'));
     }
 
-    public function update($id)
+    public function update(Article $article)
     {
         request()->validate([
             'title'=> 'required',
@@ -67,7 +67,7 @@ class ArticleController extends Controller
         ]);
 
         # Persist the edited resource...
-        $article = Article::find($id);
+        // $article = Article::find($id);
 
         $article->title = request('title');
         $article->excerpt = request('excerpt');
