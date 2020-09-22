@@ -32,22 +32,11 @@ class ArticleController extends Controller
 
     public function store()
     {
-         # Persist the new resource...
-        //  dump(request()->all()); 
-
-        request()->validate([
-            'title'=> 'required',
-            'excerpt'=>'required',
-            'body'=>'required'
-        ]);
-
-        $article = new Article();
-        $article->title = request('title');
-        $article->excerpt = request('excerpt');
-        $article->body = request('body');
-        $article->save();
-
-        return redirect('/articles');
+         # Persist the new resource...        
+        Article::create($this->validateArticle());
+        
+        // return redirect('/articles');
+        return redirect(route('articles.index'));
 
     }
 
@@ -60,26 +49,27 @@ class ArticleController extends Controller
 
     public function update(Article $article)
     {
-        request()->validate([
-            'title'=> 'required',
-            'excerpt'=>'required',
-            'body'=>'required'
-        ]);
-
         # Persist the edited resource...
-        // $article = Article::find($id);
+        $article->update($this->validateArticle());
 
-        $article->title = request('title');
-        $article->excerpt = request('excerpt');
-        $article->body = request('body');
-        $article->save();
-
-        return redirect("/articles/". $article->id); 
+        // return redirect("/articles/". $article->id); 
+        // return redirect(route('articles.show',$article)); write like this or like below
+        return redirect($article->path());  # here you need to add method in model
     }
 
     public function destroy()
     {
         # Delete the resource...
     }
+
+    protected function validateArticle(Type $var = null)
+    {
+        # code...
+        return request()->validate([
+            'title'=> 'required',
+            'excerpt'=>'required',
+            'body'=>'required'
+        ]);
+    } // we create a function to avoid duplication 
 
 }
