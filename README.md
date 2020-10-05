@@ -50,3 +50,17 @@ Source: [Laravel DOCS](https://laravel.com/docs/8.x/installation)
         # POST /articles  <- save a new article
         # PUT /articles/:id <- update existing article
         # DELETE /article/:id/ <- delete artice by id
+
+6) Eloquent Models:
+     
+     Error Solution:
+     PHP Fatal error:  Call to undefined function factory() in Psy Shell code on line 1
+        Run This  
+        
+        $ Thread::factory()->count(50)->create();  
+        
+     instead of:
+     
+          $ factory('App\Thread'::class)-create()
+        
+        
