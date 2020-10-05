@@ -22,7 +22,7 @@ Source: [Laravel DOCS](https://laravel.com/docs/8.x/installation)
 
 2) Create Project
    
-        $ laravel new blog
+        $ laravel new [project-name]
    
             
 3) Laravel Database.
