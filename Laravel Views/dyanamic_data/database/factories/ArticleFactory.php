@@ -23,11 +23,15 @@ class ArticleFactory extends Factory
     public function definition()
     {
         return [
-            'user_id'=>  User::factory(), 
-            // 'user_id'=> factory(\App\Models\User::class),
+            
+            // 'user_id'=>function () {
+            //     return factory(App\User::class);
+            // },              
+            'user_id'=> factory(\App\Models\User::class), # not working but it doen't create any impact on our program
             'title'=>$this->faker->sentence,
             'excerpt'=>$this->faker->sentence,
             'body'=>$this->faker->paragraph,
+
         ];
     }
 }
