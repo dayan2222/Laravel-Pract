@@ -6,7 +6,6 @@ use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
-// use Illuminate\Database\factories\UserFactory;
 
 class User extends Authenticatable
 {
@@ -18,7 +17,9 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'name',
+        'email',
+        'password',
     ];
 
     /**
@@ -27,7 +28,8 @@ class User extends Authenticatable
      * @var array
      */
     protected $hidden = [
-        'password', 'remember_token',
+        'password',
+        'remember_token',
     ];
 
     /**
@@ -38,20 +40,4 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
-
-    public function articles()
-    {
-        return $this->hasMany(Article::class); // select * from articles where user_id = 1//$user_id
-    }
-
-    public function projects()
-    {
-        return $this->hasMany(Project::class); // select * from projects where user_id = 1//$user_id
-    }
-
 }
-
-
-// $user = User::find(1); // select * from user where id = 1
-// $user->projects; //select * from projects where user_id = $user->id
-// $user->projects
