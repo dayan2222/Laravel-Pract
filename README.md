@@ -61,6 +61,23 @@ Source: [Laravel DOCS](https://laravel.com/docs/8.x/installation)
         
      instead of:
      
-          $ factory('App\Thread'::class)-create()
-        
-        
+         $ factory('App\Thread'::class)-create()
+
+7) Authentication 
+     
+     Building a Regestration System in Laravel
+     
+     First party package through composer  
+     
+          $ composer require laravel/ui --dev 
+          $ php artisan ui bootstrap  # you can use vue and react as well instead of bootstrap
+          $ npm install && npm run dev
+          
+    Above commands will add all the login dependecies and also add dashboard.      
+    If you need to view all the rotes simply run 
+          
+          $ php artisan route:list
+          
+          
+          
+                       
