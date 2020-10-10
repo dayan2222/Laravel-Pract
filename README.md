@@ -70,7 +70,7 @@ Source: [Laravel DOCS](https://laravel.com/docs/8.x/installation)
      First party package through composer  
      
           $ composer require laravel/ui --dev 
-          $ php artisan ui bootstrap  # you can use vue and react as well instead of bootstrap
+          $ php artisan ui bootstrap --auth  # you can use vue and react as well instead of bootstrap
           $ npm install && npm run dev
           
     Above commands will add all the login dependecies and also add dashboard.      
